@@ -46,9 +46,11 @@ await expect(toastMessage).toContainText('OTP sent successfully to your email !!
 await page.getByPlaceholder('Enter OTP').fill('123456');
 await page.getByPlaceholder('********').fill('Admin@1234');
 await page.getByRole('button', { name: 'Login' }).click();
-const toastMessage2 = page.getByRole('alert').nth(2);
-await expect(toastMessage2).toBeVisible();
-await expect(toastMessage2).toContainText('Credentials Not Matched !!');
+const toastMessage2 = page.getByText('Credentials Not Matched !!');
+await expect(toastMessage).toBeVisible();
+await expect(toastMessage).toContainText('Credentials Not Matched !!');
+
+
 
 
 })
