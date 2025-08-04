@@ -9,7 +9,7 @@ test('Load login page', async ({ page }) => {
 
 await page.getByRole('button',{name: 'Login'}).click();
 const errorMsg = page.getByText('Please fill in user name field');
-//await expect(errorMsg).toBeVisible();
+await expect(errorMsg).toBeVisible();
 
 });
 
